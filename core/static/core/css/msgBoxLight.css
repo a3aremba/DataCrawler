@@ -1,0 +1,156 @@
+﻿div.msgBox
+{
+    position: fixed;
+    z-index: 1000;
+    font-family:Arial Bold;
+    width: 430px;
+    min-height:160px;
+    color: #00335e;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 0px 11px #000000;
+    -webkit-box-shadow: 0px 0px 11px #000000;
+    box-shadow: 0px 0px 11px #000000;
+}
+div.msgBoxBackGround
+{
+    top:0;
+    left:0;
+    position:absolute;
+    padding:0;
+    margin:0;
+    width:100%;
+    height:100%;
+    background: -moz-linear-gradient(top, rgb(251, 251, 251), rgb(248, 248, 248));
+    background: -ms-linear-gradient(top, rgb(251, 251, 251), rgb(248, 248, 248));
+    background: -o-linear-gradient(top, rgb(251, 251, 251), rgb(248, 248, 248));
+    background: -webkit-linear-gradient(top, rgb(251, 251, 251), rgb(248, 248, 248));
+    background: linear-gradient(top, rgb(251, 251, 251), rgb(248, 248, 248));
+    opacity:0.9;
+    z-index:999;
+}
+div.msgBoxTitle
+{
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    padding:5px 0 5px 5px;
+    font-variant:small-caps;
+    font-size:9pt;
+    font-weight:lighter;
+    color:#666666;
+    border-bottom: 1px solid #339933;
+    border-top: 1px solid #BBFFBB;
+    background: -moz-linear-gradient(top, rgb(183, 238, 137), rgb(176, 231, 130));
+    background: -ms-linear-gradient(top, rgb(183, 238, 137), rgb(176, 231, 130));
+    background: -o-linear-gradient(top, rgb(183, 238, 137), rgb(176, 231, 130));
+    background: -webkit-linear-gradient(top, rgb(183, 238, 137), rgb(176, 231, 130));
+    background: linear-gradient(top, rgb(183, 238, 137), rgb(176, 231, 130));
+}
+div.msgBoxImage
+{
+    margin:30px 5px 0 5px;
+    display:inline-block;
+    float:left;
+    height:37px;
+    width:37px;
+}
+div.msgBoxImage img
+{
+    height:37px;
+    width:37px;
+}
+div.msgBoxContent
+{
+    font-size:10pt;
+    margin:0 3px 6px 3px;
+    display:inline-block;
+    float:left;
+    height:90px;
+    width:372px;
+}
+div.msgBoxContent p
+{
+    padding:0;
+    margin:0;
+    display: table;
+    height: 100%;
+    width: 100%;
+}
+
+div.msgBoxContent span 
+{
+    display: table-cell;
+    vertical-align: middle;
+    color: #000000;
+}
+
+div.msgBoxButtons
+{
+    display:inline-block;
+    width:100%;
+    text-align:right;
+}
+div.msgBoxButtons input[type='button']
+{
+    cursor:pointer;
+    margin:2px;
+    height:25px;
+    width:90px;
+    border:1px solid #AFAFAF;
+    background: -moz-linear-gradient(top, rgb(245, 245, 245), rgb(225, 225, 225));
+    background: -ms-linear-gradient(top, rgb(245, 245, 245), rgb(225, 225, 225));
+    background: -o-linear-gradient(top, rgb(245, 245, 245), rgb(225, 225, 225));
+    background: -webkit-linear-gradient(top, rgb(245, 245, 245), rgb(225, 225, 225));
+    background: linear-gradient(top, rgb(245, 245, 245), rgb(225, 225, 225));
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -moz-box-shadow: 0px 0px 1px #000000;
+    -webkit-box-shadow: 0px 0px 1px #000000;
+    box-shadow: 0px 0px 1px #000000;
+}
+div.msgBoxButtons input[type='button']:hover
+{
+    background: -moz-linear-gradient(top, rgb(225, 225, 225), rgb(245, 245, 245));
+    background: -ms-linear-gradient(top, rgb(225, 225, 225), rgb(245, 245, 245));
+    background: -o-linear-gradient(top, rgb(225, 225, 225), rgb(245, 245, 245));
+    background: -webkit-linear-gradient(top, rgb(225, 225, 225), rgb(245, 245, 245));
+    background: linear-gradient(top, rgb(225, 225, 225), rgb(245, 245, 245));
+}
+
+div.msgBoxButtons input[type='button']::-moz-focus-inner
+{   
+    border : 0px;
+} 
+
+div.msgBoxButtons input[type='button']:active
+{
+    background-color:#AAAAAA;
+    -moz-box-shadow: 0px 0px 3px #000000;
+    -webkit-box-shadow: 0px 0px 3px #000000;
+    box-shadow: 0px 0px 3px #000000;
+    
+}
+
+div.msgBoxInputs
+{
+    margin:0 auto;
+    padding-top:2px;
+    padding-bottom:2px;
+    margin-top:5px;
+    width:195px;
+}
+div.msgInput input[type='text'],div.msgInput input[type='password']
+{
+    padding:4px;
+    border:1px solid #DFDFDF;
+    color:#2f2f2f;
+    width:180px;
+}
+div.msgInput text
+{
+    color:#2f2f2f;
+    font-size:10pt;
+}

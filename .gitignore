@@ -46,9 +46,18 @@ coverage.xml
 
 # Django stuff:
 *.log
+core/local_settings.py
+testfile.py
+virtenv/
+logs/
+
 
 # Sphinx documentation
 docs/_build/
 
 # PyBuilder
 target/
+
+#On Mac OS X
+.DS_Store
+.idea/
