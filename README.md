@@ -11,7 +11,7 @@ Loading content on the path:
 - http://domain-name/parse-content/
 
 Search through the list of words
-- http://domain-name/find-word/
+- http://domain-name/find-word?q=word
 
 
 ------------------------------------------------------------------------------------------------------------------------
