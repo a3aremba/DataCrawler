@@ -87,6 +87,7 @@ class HtmlParseManager(object):
         try:
             for save_dict in self._list_reletive_words:
                 save_dict['siteConfig'] = self._siteConfigObject
+                save_dict['site_name'] = self._siteConfigObject.url
                 revWord = RelevantWords(**save_dict)
                 revWord.save()
         except Exception, e:

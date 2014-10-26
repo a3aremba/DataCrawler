@@ -11,24 +11,24 @@ from crowler.models import RelevantWords
 from core.models import SiteConfig
 
 def crowler_main(request):
-    params = dict()
+    params = {}
     # params['error'] = 'Test'
-    params['data'] = 'ok'
+    params['data'] = SiteConfig.objects.filter()
     return render_to_response('crowler/main.html',
                           params, context_instance = RequestContext(request))
 
 @csrf_exempt
 def set_url_on_db(request):
     reqParams = request.POST.dict()
-    print request.POST
-    CDBDataManager(reqParams).saveUrl()
+    print reqParams
+    result  = CDBDataManager(reqParams).saveUrl()
     return HttpResponse(json.dumps({'status':True, 'message':'Any error!'}), content_type = "application/json")
 
 def parse_content_by_words(request):
-    sc = SiteConfig.objects.get(id=1)
-    hPM = HtmlParseManager(sc)
-    hPM.make_list_of_words()
-    hPM.save_words_to_db()
+    for el in SiteConfig.objects.filter():
+        hPM = HtmlParseManager(el)
+        hPM.make_list_of_words()
+        hPM.save_words_to_db()
     return HttpResponse(json.dumps({'status': True,
                                     'message': u'Parse is already OK :-8'}),
                         content_type='application/json; charset=utf-8')
