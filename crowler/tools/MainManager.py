@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from urllib import urlopen
-from BeautifulSoup import BeautifulStoneSoup
+from BeautifulSoup import BeautifulSoup
 
 class CMainManager(object):
     def __init__(self, data):
@@ -9,12 +9,11 @@ class CMainManager(object):
         self.result = False
         self.massage = u'Some error'
 
-    def _get_url(self):
-        return "http://google.com"
-
     def get_content(self):
         content = urlopen(self.__data).read()
-        return BeautifulStoneSoup(content).find('body')
+        return self.__cleare(BeautifulSoup(content).body)
 
-    def __cleare(self):
-        pass
+    def __cleare(self, data):
+        for tag in data.findAll(['script','style', 'iframe']):
+            tag.replaceWith('')
+        return data

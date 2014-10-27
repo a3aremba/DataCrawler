@@ -12,7 +12,6 @@ class CDBDataManager(object):
 
     def saveUrl(self):
         try:
-            print self._dataDict
             safeUrl = SiteConfig()
             safeUrl.url = self._dataDict.get('url')
             safeUrl.name = self._dataDict.get('name')
@@ -20,8 +19,8 @@ class CDBDataManager(object):
         except Exception, e:
             connection._rollback()
             if e.args[0] == 1062:
-                message = 'URL: '+str(self._url)+' - уже есть в базе'
+                message = 'URL: '+str(self._dataDict)+' - уже есть в базе'
             else:
-                message = 'Не удалось сохранить '+str(self._url)
+                message = 'Не удалось сохранить '+str(self._dataDict)
             return False, message
         return True, None
