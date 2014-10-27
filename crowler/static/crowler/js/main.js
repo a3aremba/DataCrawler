@@ -7,6 +7,7 @@ function init_page()
     $('#myTab a').click(change_view);
     $('#actionCheck a').click(change_view_list);
     $('.parse_db').click(parse_handler);
+    $('.search_a').click(search_handler);
     $(function () {
         $('#myTab a:first').tab('show');
     });
@@ -40,6 +41,7 @@ function parse_handler()
         return false;
     });
 }
+/////////////////////////////////////////////////////////////////////////////////////////////
 
 function save_url_handler()
 {
@@ -63,3 +65,32 @@ function get_data_url()
 	return result;
 }
 /////////////////////////////////////////////////////////////////////////////////////////////
+
+function generate_result(sitename, searchword, history) {
+	return '<h4>Site name: '
+        + sitename
+        +'</h4><p>Search word: <span class="badge">'
+        + searchword
+        +'</span></p><p>Element history: <span class="label label-info">'
+        + history
+        +'</span></p>'
+}
+
+function search_handler()
+{
+    console.log('search_handler');
+    $.get($('#find_need_word').val(), {"q": $('.search-query').val()}
+    ).done(function(response){
+        console.log(response);
+        var result = '';
+//            row-fluid marketing
+        $.each(response, function(index, value)
+        {
+//            console.log(value.site_name, value.search_word, value.tag_history);
+            result += generate_result(value.site_name, value.search_word, value.tag_history);
+        });
+        $('.results').empty().append(result);
+    }).fail(function() {
+        return false;
+    });
+}

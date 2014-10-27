@@ -12,6 +12,7 @@
 
 {% block content %}
 <input type="hidden" id="set_url_on_db" value='{% url 'set_url_on_db' %}'/>
+<input type="hidden" id="find_need_word" value='{% url 'find_need_word' %}'/>
 <input type="hidden" id="parse_content_by_words" value='{% url 'parse_content_by_words' %}'/>
 
 	{% if error %}
@@ -40,8 +41,8 @@
         		{% if data %}
     	        <form class="form-search">
 			    	<div class="input-append">
-			    		<input type="text" class="span2 search-query">
-			    		<button type="button" class="btn">Search</button>
+			    		<input type="text" class="span2 search-query" placeholder="Enter your search word...">
+			    		<button type="button" class="btn search_a">Search</button>
 			    	</div>
 			    </form>
 			    {% else %}
@@ -49,23 +50,8 @@
 			    {% endif %}
 			    <br />
         </div>
-        <hr>
         <div class="row-fluid marketing">
-            <div class="span6">
-                <h4>Subheading</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-                <h4>Subheading</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-                <h4>Subheading</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
-            </div>
-            <div class="span6">
-                <h4>Subheading</h4>
-                <p>Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum.</p>
-                <h4>Subheading</h4>
-                <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet fermentum.</p>
-                <h4>Subheading</h4>
-                <p>Maecenas sed diam eget risus varius blandit sit amet non magna.</p>
+            <div class="span6 results">
             </div>
         </div>
     </div>
@@ -127,15 +113,16 @@
 	    		<h1>Zaremba Alex</h1>
         		<img src="{{ STATIC_URL }}crowler/img/a3aremba.jpg" class="img-circle">
         		    <div class="progress">
-				    	<div class="bar bar-success" style="width: 35%;"></div>
-				    	<div class="bar bar-warning" style="width: 20%;"></div>
-				    	<div class="bar bar-danger" style="width: 10%;"></div>
+				    	<div class="bar bar-success" style="width: 35%;">Python</div>
+				    	<div class="bar bar-warning" style="width: 20%;">JS</div>
+				    	<div class="bar bar-danger" style="width: 10%;">DB</div>
+                        <div>&nbsp;Other...</div>
 				    </div>
 	    	</div>
 	    	<div class="span8">
 	    		<br /><br />
 	    		<p><span class="label label-info">GITHUB</span> https://github.com/a3aremba/DataCrawler</p>
-	    		<p><span class="label label-warning">LinkedIn</span> </p>
+	    		<p><span class="label label-warning">LinkedIn</span>  <a target="_blank" href="https://www.linkedin.com/profile/view?id=319873122">a3aremba</a></p>
 	    	</div>
 	    </div>
     </div>

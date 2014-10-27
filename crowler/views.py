@@ -34,12 +34,11 @@ def parse_content_by_words(request):
                         content_type='application/json; charset=utf-8')
 
 def find_need_word(request):
-    query = request.GET.dict().get('q')
-    objects = RelevantWords.objects.filter(word=query)
+    objects = RelevantWords.objects.filter(word=request.GET.dict().get('q'))
     ret_list = []
     for obj in objects:
         some_dict = {
-            'word': obj.word,
+            'search_word': obj.word,
             'tag_history': obj.tag_history,
             'site_name': obj.siteConfig.name
         }
