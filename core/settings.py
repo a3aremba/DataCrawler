@@ -1,7 +1,7 @@
 # Django settings for pb_auth project.
 import os.path
 import socket
-
+import dj_database_url
 
 
 CFG_PATH = os.path.abspath(os.path.dirname(__file__))
@@ -9,6 +9,8 @@ ROOT_PATH = os.path.abspath(os.path.join(CFG_PATH, '..'))
 rootDirName = os.path.split(ROOT_PATH)[1]
 DEBUG = True
 RELEASE = False
+TEMPLATE_DEBUG = True
+ALLOWED_HOSTS = []
 
 PRODUCTION_SERVERS = ['VM-NOMIR-APP2']
 HOST_NAME = socket.gethostname()
@@ -38,16 +40,22 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+ROOT_URLCONF = 'gettingstarted.urls'
+WSGI_APPLICATION = 'gettingstarted.wsgi.application'
+
+# Static asset configuration
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': DATABASE_NAME,
-        'STORAGE_ENGINE': 'MYISAM',
-        'USER': USER,                      # Not used with sqlite3.
-        'PASSWORD': PASSWORD,                  # Not used with sqlite3.
-        'HOST': DATABASE_HOST,                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '3306',                      # Set to empty string for default. Not used with sqlite3.
-
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
@@ -100,6 +108,15 @@ STATIC_ROOT = os.path.join(os.path.dirname(__file__), '../static').replace('\\',
 # Example: "http://media.lawrence.com/static/"
 
 STATIC_URL = '/static/'
+
+# Parse database configuration from $DATABASE_URL
+DATABASES['default'] =  dj_database_url.config()
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# Allow all host headers
+ALLOWED_HOSTS = ['*']
 
 # Additional locations of static files
 STATICFILES_DIRS = (

@@ -1,4 +1,5 @@
-#!./virtenv/bin/python
+#!/usr/bin/env python
+########################!./virtenv/bin/python
 import os
 import sys
 

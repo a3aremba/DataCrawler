@@ -17,10 +17,10 @@ import os
 import sys
 
 sys.path.append(os.path.dirname(__file__))
-sys.path.append('/sybase/django/currency_op/')
-sys.path.append('/sybase/django/currency_op/core')
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "core.settings")
 
-from django.core.handlers.wsgi import WSGIHandler
-application = WSGIHandler()
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
+
+application = Cling(get_wsgi_application())
