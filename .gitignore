@@ -49,7 +49,7 @@ coverage.xml
 core/local_settings.py
 testfile.py
 virtenv/
-logs/*
+#logs/*
 
 
 # Sphinx documentation
