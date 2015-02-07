@@ -10,6 +10,10 @@ django-filter==0.7
 django-mptt==0.6.0
 django-redis==3.5.1
 django-redis-sessions==0.4.0
+dj-database-url==0.3.0
+dj-static==0.0.6
+django-toolbelt==0.0.1
+django-celery==3.1.10
 lxml==3.3.1
 python-dateutil==2.1
 python-logstash==0.2.1
@@ -18,7 +22,9 @@ six==1.4.1
 sqlparse==0.1.10
 suds==0.4
 celery==3.1.12
-django-celery==3.1.10
 uuid==1.30
+gunicorn==19.0.0
+psycopg2==2.5.3
+static3==0.5.1
 wsgiref==0.1.2
 
