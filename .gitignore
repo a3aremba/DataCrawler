@@ -49,8 +49,6 @@ coverage.xml
 core/local_settings.py
 testfile.py
 virtenv/
-#logs/*
-
 
 # Sphinx documentation
 docs/_build/
