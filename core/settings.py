@@ -12,36 +12,13 @@ RELEASE = False
 TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
-PRODUCTION_SERVERS = ['VM-NOMIR-APP2']
 HOST_NAME = socket.gethostname()
 
-DATABASE_HOST = 'localhost'
-if HOST_NAME == 'VM-ISOT-POLY':
-    DATABASE_HOST = '10.1.96.130'
-elif HOST_NAME == 'VM-NOMIR-APP2':
-    DATABASE_HOST = '10.1.98.35'
-
-USER = 'developer'
-PASSWORD = 'Sy4BmcDYrzpm'
-
-if rootDirName.find('master') == -1:
-    HOST_ADDRESS_HOST_PORT = "8200"
-    DATABASE_NAME = 'currency_op_test'
-else:
-    RELEASE_OR_PREDRELEASE_INSTANCE = True
-    HOST_ADDRESS_HOST_PORT = "8300"
-    DATABASE_NAME = 'currency_op'
-    DEBUG = False
-    RELEASE = True
-    COMPRESS_ENABLED = True
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('admin', 'a.3aremba@gmail.com'),
 )
 
 MANAGERS = ADMINS
-
-ROOT_URLCONF = 'gettingstarted.urls'
-WSGI_APPLICATION = 'gettingstarted.wsgi.application'
 
 # Static asset configuration
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -102,7 +79,7 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(os.path.dirname(__file__), '../static').replace('\\','/')
+#STATIC_ROOT = os.path.join(os.path.dirname(__file__), '../static').replace('\\','/')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -118,12 +95,6 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
 
-# Additional locations of static files
-STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
 
 # List of finder classes that know how to find static files in
 # various locations.
